@@ -4,8 +4,10 @@ const app = express()
 app.use(express.json());
 
 const {urlRouter}=require('./routes/urlRoute')
+const {redirectRouter}=require('./routes/redirectRoute')
 
 app.use('/api/v1/short',urlRouter);
+app.use('/',redirectRouter)
 
 const mongoose= require("mongoose");
 require('dotenv').config();

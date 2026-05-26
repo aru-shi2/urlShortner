@@ -1,12 +1,12 @@
 const {z}=require("zod")
-const nanoid=require('nanoid')
+const {nanoid}=require('nanoid')
 const {urlModel}=require('../model/urlModel')
 
-const getUrl=async (req,res)=>{
+const postUrl=async (req,res)=>{
     try{
     const url=req.body.url
-    
-    const urlSchema=z.object({
+    console.log(url)
+const urlSchema=z.object({
     url:z.string()
 })
 
@@ -18,8 +18,7 @@ if(!parsedurl.success){
     })
 }
 
-const id=nanoid(6);
-
+let id=nanoid(6);
 console.log(id)
 
 const existing=await urlModel.findOne({shortCode:id})
@@ -41,8 +40,34 @@ return res.json({
         res.status(500).json({
             msg:"error"
         })
+        console.log(err)
     }
 }
+
+const getUrl=async (req,res)=>{
+   try {
+        const sCode=req.params.sCode;
+    
+    const realUrl=await urlModel.findOne({
+        shortCode:sCode
+    })
+
+
+    if(!realUrl){
+        return res.status(404).json({
+            msg:"not found!"
+        })
+    }
+
+    return res.redirect(realUrl.longUrl)
+
+}catch(e){
+    return res.status(500).json({
+        msg:"server error"
+    })
+}
+}
 module.exports={
+    postUrl,
     getUrl
 }

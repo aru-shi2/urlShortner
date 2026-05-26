@@ -1,9 +1,9 @@
 const {Router}=require("express");
 const urlRouter=Router();
 
-const {getUrl}=require('../controller/urlController')
+const {postUrl}=require('../controller/urlController')
 
-urlRouter.post("/",getUrl)
+urlRouter.post("/",postUrl)
 
 module.exports={
     urlRouter
