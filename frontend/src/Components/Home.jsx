@@ -3,52 +3,39 @@ import Navbar from './Navbar'
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-zinc-950 text-white flex flex-col">
+    <div className="min-h-screen bg-[#000000] text-white flex flex-col">
       <Navbar />
 
       {/* Hero */}
-      <section className="flex flex-col items-center text-center px-6 py-24 md:py-36">
+      <section className="flex flex-col items-center text-center px-6 py-24 md:py-26">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-medium mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
           Free to use — no sign-up required
         </span>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] max-w-3xl mb-6">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] max-w-3xl mb-6">
           Turn every URL into{' '}
-          <span className="text-indigo-400">something better</span>
+          <span className="text-[#555ec0]">something better</span>
         </h1>
 
         <p className="text-zinc-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
           Create cleaner links and beautiful QR codes for effortless sharing — in seconds.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 w-full max-w-lg">
-          <input
-            type="url"
-            placeholder="Paste your long URL here…"
-            className="flex-1 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-xl text-sm text-white placeholder-zinc-500 outline-none"
-          />
-          <a href="/short" className="px-6 py-3 bg-indigo-500 hover:bg-indigo-400 text-white text-sm font-medium rounded-xl transition-colors text-center whitespace-nowrap">
-            Shorten URL
+        <a href="/short" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-500 hover:bg-indigo-400 text-white text-sm font-medium rounded-xl transition-colors">
+            Get started free
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </a>
-        </div>
 
-        {/* Stats */}
-        <div className="flex flex-wrap justify-center gap-10 mt-16">
-          {[['10M+', 'Links shortened'], ['99.9%', 'Uptime'], ['180+', 'Countries']].map(([num, label]) => (
-            <div key={label} className="text-center">
-              <p className="text-2xl font-bold">{num}</p>
-              <p className="text-xs text-zinc-500 mt-1">{label}</p>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* Features */}
-      <section className="max-w-6xl mx-auto w-full px-6 py-20">
+      <section className="max-w-6xl mx-auto w-full px-6 py-5">
         <div className="text-center mb-12">
-          <p className="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-3">Features</p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Everything you need</h2>
+          <p className="text-3xl font-bold tracking-widest text-indigo-400 uppercase mb-3">Features</p>
+          <h2 className="text-3xl md:text-xl font-bold tracking-tight text-gray-300">Everything you need</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

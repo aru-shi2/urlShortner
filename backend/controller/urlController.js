@@ -1,6 +1,7 @@
 const {z}=require("zod")
 const {nanoid}=require('nanoid')
 const {urlModel}=require('../model/urlModel')
+const QRCode=require("qrcode")
 
 const postUrl=async (req,res)=>{
     try{
@@ -67,7 +68,21 @@ const getUrl=async (req,res)=>{
     })
 }
 }
+
+const getQR=async(req,res)=>{
+    try{
+    const url=req.body.url;
+    const qrCode=await QRCode.toDataURL(url)
+    res.json({qrCode})
+    }catch(e){
+        res.status(500).json({
+            msg:"Failed to generate QR"
+        })
+    }
+}
+
 module.exports={
     postUrl,
-    getUrl
+    getUrl,
+    getQR
 }

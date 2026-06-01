@@ -5,7 +5,6 @@ const Navbar = () => {
     <nav className="w-full border-b border-zinc-800 bg-zinc-950 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-indigo-500 flex items-center justify-center">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
