@@ -34,7 +34,7 @@ const newurl=await urlModel.create({
 })
 
 return res.json({
-    short:`http://localhost:3000/${id}`
+    short:`https://urlshortner-0ez9.onrender.com/${id}`
 })
 
     }catch(err){

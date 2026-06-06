@@ -13,7 +13,7 @@ const Qrcode = () => {
   
   const QrGenerate=async () => {
     try{
-    const res=await fetch("http://localhost:3000/api/v1/qr",{
+    const res=await fetch("https://urlshortner-0ez9.onrender.com/api/v1/qr",{
       method:'POST',
       headers:{
         "Content-Type":"application/json",
@@ -95,21 +95,6 @@ const Qrcode = () => {
 
             {/* Divider */}
             <div className="h-px bg-slate-100 mx-6" />
-
-            {/* Download*/}
-            {/* <div className="px-6 py-5 flex flex-col gap-3">
-                <a
-                href={qrImageUrl}
-                download="qrcode.png"
-                className="w-full flex items-center justify-center gap-2 py-3 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold rounded-xl transition-colors shadow-md shadow-violet-100"
-                >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M8 2v7M5 6l3 3 3-3" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M2 12v1a1 1 0 001 1h10a1 1 0 001-1v-1" strokeLinecap="round"/>
-                </svg>
-                Download QR Code
-              </a>
-            </div> */}
           </div>
         </div>
     </main>
