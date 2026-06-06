@@ -19,9 +19,6 @@ app.use('/api/v1/short',urlRouter);
 app.use('/',redirectRouter);
 app.use('/api/v1/qr',qrRouter);
 
-const mongoose= require("mongoose");
-require('dotenv').config();
-
 async function main() {
   await mongoose.connect(process.env.DATABASE_URL)
 console.log("database connected")
