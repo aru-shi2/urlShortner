@@ -13,7 +13,7 @@ const Short = () => {
   
   const handleclick=async () => {
     try{
-    const res=await fetch("https://urlshortner-0ez9.onrender.com/v1/short",{
+    const res=await fetch("https://urlshortner-0ez9.onrender.com/api/v1/short",{
       method:'POST',
       headers:{
         "Content-Type":"application/json",
