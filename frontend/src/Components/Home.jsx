@@ -1,98 +1,120 @@
 import React from 'react'
 import Navbar from './Navbar'
+import { Link, BarChart3, QrCode } from 'lucide-react'; 
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate=useNavigate()
+
+  const start=()=>{
+    navigate("/short")
+  }
+
+  const qr=()=>{
+    navigate("/qr")
+  }
   return (
-    <div className="min-h-screen bg-[#000000] text-white flex flex-col">
+    <div
+      className="min-h-screen text-slate-800 flex flex-col relative overflow-hidden"
+      style={{ background: 'linear-gradient(135deg, #eef2ff 0%, #f5f3ff 50%, #fce7f3 100%)' }}
+    >
       <Navbar />
 
-      {/* Hero */}
-      <section className="flex flex-col items-center text-center px-6 py-24 md:py-26">
-        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-medium mb-6">
-          <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
-          Free to use — no sign-up required
-        </span>
+      {/* Hero Section */}
+      <section className="relative max-w-6xl mx-auto w-full px-6 py-20 flex flex-col md:flex-row items-center gap-17">
+        
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div className="absolute top-[10%] left-[5%] w-16 h-16 bg-violet-400 rounded-full opacity-30"></div>
+          <div className="absolute top-[15%] right-[10%] w-20 h-20 border-4 border-indigo-500 rotate-12 opacity-40"></div>
+          <div className="absolute bottom-[20%] left-[10%] w-24 h-24 bg-pink-400 rounded-3xl opacity-30 -rotate-12"></div>
+          <div className="absolute top-[60%] right-[25%] w-12 h-12 bg-blue-500 rounded-full opacity-40"></div>
+          <div className="absolute bottom-[10%] right-[15%] w-28 h-28 border-[6px] border-violet-500 rounded-full opacity-20"></div>
+          <div className="absolute top-[40%] left-[30%] w-10 h-10 bg-indigo-300 rotate-45 opacity-50"></div>
+        </div>
 
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] max-w-3xl mb-6">
-          Turn every URL into{' '}
-          <span className="text-[#555ec0]">something better</span>
-        </h1>
+        {/* Left: Text */}
+        <div className="flex-1 flex flex-col items-start text-left z-10">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 text-sm font-bold mb-6">
+            <span className="w-2 h-2 rounded-full bg-indigo-500"></span>
+            Free to use — no sign-up required
+          </span>
 
-        <p className="text-zinc-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
-          Create cleaner links and beautiful QR codes for effortless sharing — in seconds.
-        </p>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-800 mb-6 leading-tight">
+            Turn every URL into <span className="bg-gradient-to-r to-teal-700 from-blue-500 bg-clip-text text-transparent">something better</span>
+          </h1>
 
-        <a href="/short" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-500 hover:bg-indigo-400 text-white text-sm font-medium rounded-xl transition-colors">
-            Get started free
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
+          <p className="text-slate-600 text-xl max-w-lg mb-8 leading-relaxed">
+            Create cleaner links and beautiful QR codes for effortless sharing — in seconds. No account needed.
+          </p>
 
+<div className="btns flex gap-5">
+          <button onClick={start} className="px-10 py-4 bg-gradient-to-r from-cyan-600 to-teal-600 shadow-lg shadow-blue-500/25 hover:scale-103 text-white font-bold rounded-2xl transition-all shadow-xl shadow-indigo-200">
+            Url shortener
+          </button>
+
+          <button onClick={qr} className="px-10 py-4 bg-gradient-to-r from-cyan-600 to-teal-600 shadow-lg shadow-blue-500/25 hover:scale-103 text-white font-bold rounded-2xl transition-all shadow-xl shadow-indigo-200">
+            Generate QR
+          </button>
+</div>
+        </div>
+
+        {/* Right */}
+        <div className="flex-1 w-full max-w-md z-10 flex justify-center">
+          <div 
+            className="w-90 h-80 relative shadow-2xl"
+            style={{
+              maskImage: "radial-gradient(circle at 50% 50%, black 70%, transparent 90%)",
+              WebkitMaskImage: "radial-gradient(circle at 50% 50%, black 70%, transparent 90%)"
+            }}
+          >
+            <img
+              src="https://www.awardspace.com/wp-content/uploads/2024/05/how-to-update-drupal-core-featured-image.jpeg"
+              alt="URL management"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
       </section>
 
       {/* Features */}
-      <section className="max-w-6xl mx-auto w-full px-6 py-5">
-        <div className="text-center mb-12">
-          <p className="text-3xl font-bold tracking-widest text-indigo-400 uppercase mb-3">Features</p>
-          <h2 className="text-3xl md:text-xl font-bold tracking-tight text-gray-300">Everything you need</h2>
+
+<section id="features" className="max-w-6xl mx-auto w-full px-6 py-8 z-10">
+  <h1 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-16">
+    <span className=" text-gradient-to-r from-blue-500 to-teal-500">Features</span>
+  </h1>
+  
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {[
+      { 
+        title: "One Link, Endless Reach", 
+        desc: "Shrink bulky URLs into sleek, shareable links that look cleaner and travel faster across social media, messages, and marketing campaigns.",
+        icon: <Link className="w-8 h-8 text-indigo-600" /> 
+      },
+      { 
+        title: "Every Click Has a Story", 
+        desc: "See who's engaging with your links through real-time analytics. Track performance, measure reach, and uncover insights that help you grow smarter.",
+        icon: <BarChart3 className="w-8 h-8 text-indigo-600" /> 
+      },
+      { 
+        title: "From Scan to Destination", 
+        desc: "Generate beautiful QR codes instantly and connect the physical world to the digital one. One scan is all it takes to reach your content anywhere, anytime.",
+        icon: <QrCode className="w-8 h-8 text-indigo-600" /> 
+      }
+    ].map((feat, i) => (
+      <div key={i} className="bg-white p-8 rounded-3xl border shadow-lg hover:bg-[#d9f3eb] border-indigo-300 transition-all duration-300 group">
+        {/* Icon Container */}
+        <div className="mb-6 p-3 bg-indigo-50 w-fit rounded-2xl group-hover:bg-white transition-colors">
+          {feat.icon}
         </div>
+        
+        <h3 className="text-xl font-bold text-slate-900 mb-3">{feat.title}</h3>
+        <p className="text-slate-600 leading-relaxed">{feat.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <div className="w-10 h-10 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-400 mb-5">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <path d="M8 5H6a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-2" strokeLinecap="round"/>
-                <path d="M15 3h2v2M17 3l-7 7" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <h3 className="text-base font-semibold text-white mb-2">Instant Link Transformation</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">Paste any long URL and get a clean, shareable link in seconds.</p>
-          </div>
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <div className="w-10 h-10 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-400 mb-5">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <rect x="3" y="3" width="6" height="6" rx="1"/>
-                <rect x="11" y="3" width="6" height="6" rx="1"/>
-                <rect x="3" y="11" width="6" height="6" rx="1"/>
-                <rect x="13" y="13" width="4" height="4" rx="0.5"/>
-              </svg>
-            </div>
-            <h3 className="text-base font-semibold text-white mb-2">Generate QR Codes Instantly</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">Turn any link into a scannable QR code for effortless access across all devices.</p>
-          </div>
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-            <div className="w-10 h-10 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-400 mb-5">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <path d="M3 14l4-5 3 3 4-6 3 4" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <h3 className="text-base font-semibold text-white mb-2">Understand Your Audience</h3>
-            <p className="text-sm text-zinc-400 leading-relaxed">Track clicks, monitor engagement and gain insights into how your links perform.</p>
-          </div>
-
-        </div>
-      </section>
-
-      {/* CTA Banner */}
-      <section className="max-w-6xl mx-auto w-full px-6 pb-20">
-        <div className="rounded-2xl bg-indigo-500/10 border border-indigo-500/20 px-8 py-12 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Ready to shorten your first link?</h2>
-          <p className="text-zinc-400 mb-6 text-sm">No account needed. Start in seconds.</p>
-          <a href="/short" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-500 hover:bg-indigo-400 text-white text-sm font-medium rounded-xl transition-colors">
-            Get started free
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-zinc-800 py-6 text-center text-xs text-zinc-600">
+      <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-500 bg-white/50">
         © {new Date().getFullYear()} urlify. All rights reserved.
       </footer>
     </div>
