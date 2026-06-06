@@ -19,9 +19,9 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-1">
-          <Link href="/" className="px-4 py-2 rounded-lg text-sm text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">Home</Link>
-          <Link href="/short" className="px-4 py-2 rounded-lg text-sm text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">URL Shortener</Link>
-          <Link href="/qr" className="px-4 py-2 rounded-lg text-sm text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">QR Code</Link>
+          <Link to="/" className="px-4 py-2 rounded-lg text-sm text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">Home</Link>
+          <Link to="/short" className="px-4 py-2 rounded-lg text-sm text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">URL Shortener</Link>
+          <Link to="/qr" className="px-4 py-2 rounded-lg text-sm text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">QR Code</Link>
         </div>
       </div>
     </nav>
