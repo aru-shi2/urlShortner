@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 const Navbar = () => {
   return (
@@ -18,16 +19,10 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-1">
-          <a href="/" className="px-4 py-2 rounded-lg text-sm text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">Home</a>
-          <a href="/short" className="px-4 py-2 rounded-lg text-sm text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">URL Shortener</a>
-          <a href="/qr" className="px-4 py-2 rounded-lg text-sm text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">QR Code</a>
+          <Link href="/" className="px-4 py-2 rounded-lg text-sm text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">Home</Link>
+          <Link href="/short" className="px-4 py-2 rounded-lg text-sm text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">URL Shortener</Link>
+          <Link href="/qr" className="px-4 py-2 rounded-lg text-sm text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">QR Code</Link>
         </div>
-
-        <div className="hidden md:flex items-center gap-3">
-          <a href="#" className="px-4 py-2 bg-[#4b9bbb] hover:bg-[#0a5674] text-white text-sm font-medium rounded-lg transition-colors">Get started</a>
-        </div>
-
-        <a href="#" className="md:hidden px-4 py-2 bg-violet-600 text-white text-sm font-medium rounded-lg">Get started</a>
       </div>
     </nav>
   )

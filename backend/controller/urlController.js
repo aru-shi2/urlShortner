@@ -53,7 +53,7 @@ const getUrl=async (req,res)=>{
         shortCode:sCode
     })
 
-
+    console.log(realUrl)
     if(!realUrl){
         return res.status(404).json({
             msg:"not found!"
