@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const PORT=process.env.PORT||3000;
 const cors=require("cors");
 
 app.use(cors({
@@ -22,6 +23,8 @@ require('dotenv').config();
 async function main() {
   await mongoose.connect(process.env.DATABASE_URL)
 console.log("database connected")
-app.listen(3000)
+app.listen(PORT,()=>{
+  console.log(`server runing on ${PORT}`)
+})
 }
 main()
